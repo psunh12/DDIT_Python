@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="text/javascript">
+function fn_axios(){
+	axios.post("/axios",{'menu':'간짜장'})
+	.then(function (resp) {
+		console.log(resp);
+	});
+}
+
+</script>
+</head>
+<body>
+<a href="javascript:fn_axios()">axios</a>
+
+</body>
+</html>

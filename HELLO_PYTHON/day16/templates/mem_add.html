@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+function fn_add_act(){
+	document.frm.submit();
+}
+$(document).ready(function() {
+	$("#btn_add_act").bind("click", function(event) {
+		fn_add_act();
+	});
+
+});
+</script>
+</head>
+<body>
+MEM ADD<br/>
+<form action="mem_add_act" name="frm" method="post">
+	<table border="1px">
+		<tr>
+			<td>사번</td>
+			<td><input type="text" name="m_id" /></td>
+		</tr>
+		<tr>
+			<td>이름</td>
+			<td><input type="text" name="m_name" /></td>
+		</tr>
+		<tr>
+			<td>전화</td>
+			<td><input type="text" name="tel" /></td>
+		</tr>
+		<tr>
+			<td>메일</td>
+			<td><input type="text" name="email" /></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="저장" id="btn_add_act">
+			</td>
+		</tr>
+	
+	</table>
+</form>
+</body>
+</html>

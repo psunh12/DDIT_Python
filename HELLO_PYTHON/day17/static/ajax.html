@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<script type="text/javascript">
+function myclick(){
+	var param = {
+		'menu':'탕수육'
+	};
+	$.ajax({
+		type:'POST',
+		url:'/ajax',
+		data:param,
+		success:function(res){
+			console.log(res);
+		}
+	});
+}
+function myclick2(){
+	var param = {
+		'menu':'탕수육'
+	};
+	$.ajax({
+		type:'POST',
+		url:'/ajax2',
+		data:JSON.stringify(param),
+		success:function(res){
+			console.log(res);
+		}
+	});
+}
+
+</script>
+</head>
+<body>
+<a href="javascript:myclick2()">ajax</a>
+</body>
+</html>

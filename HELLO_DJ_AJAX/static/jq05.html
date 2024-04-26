@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#it_first,#it_last{
+	width: 40px;
+}
+#my_div{
+	height: 200px;
+}
+</style>
+<script src="jquery-3.7.1.js"></script>
+<script type="text/javascript">
+function getStar(cnt){
+	var ret = "";
+	for(var i=0;i<cnt;i++){
+		ret += "★";
+	}
+	ret += "<br/>"
+	return ret;
+}
+
+function myclick(){	
+	var f = parseInt($("#it_first").val());
+	var l = parseInt($("#it_last").val());
+	
+	var txt = "";
+	
+	for(var i=f;i<=l;i++){
+		txt += getStar(i);
+	}
+	
+	$("#my_div").html(txt);
+	
+
+}
+$(document).ready(function() {
+	$("#btn").bind("click", function(event) {
+		myclick();
+	});
+});
+</script>
+</head>
+<body>
+<table border="1px">
+	<tr>
+		<td>첫별수:</td>
+		<td>
+			<input type="text" id="it_first">
+		</td>
+	</tr>
+	<tr>
+		<td>끝별수:</td>
+		<td>
+			<input type="text" id="it_last">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" value="별출력하기" id="btn" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<div id="my_div"></div>
+		</td>
+	</tr>
+	
+</table>
+</body>
+</html>
